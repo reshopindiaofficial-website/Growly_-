@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="description" content="छोटे YouTube क्रिएटर्स का पहला सहारा: दूसरों की मदद कीजिए, अपने वीडियो पर भी मदद पाइए।">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="YT Growly"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:type" content="website"><meta property="og:site_name" content="YT Growly">
+<meta property="og:title" content="YT Growly – छोटे क्रिएटर्स का पहला सहारा">
+<meta property="og:description" content="दूसरों की मदद कीजिए, अपने वीडियो पर भी मदद पाइए।">
+<meta property="og:url" content="https://growly-74l.pages.dev/">
+<meta property="og:image" content="https://growly-74l.pages.dev/og-image.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://growly-74l.pages.dev/og-image.png">
+<meta name="theme-color" content="#141a46">
+<title>YT Growly – छोटे क्रिएटर्स का पहला सहारा</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%2236%2028%20148%20186%22%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%2256%22%20r%3D%2224%22%20fill%3D%22%231b2160%22/%3E%3Cpath%20d%3D%22M48%20172C48%20126%2072%20100%20110%20100C148%20100%20172%20126%20172%20172%22%20fill%3D%22none%22%20stroke%3D%22%231b2160%22%20stroke-width%3D%2216%22%20stroke-linecap%3D%22round%22/%3E%3Cpath%20d%3D%22M96%20122Q96%20117%20101%20120L128%20137Q132%20140%20128%20143L101%20160Q96%20163%2096%20158Z%22%20fill%3D%22%23e0201a%22/%3E%3Cpath%20d%3D%22M42%20192Q110%20222%20178%20192%22%20fill%3D%22none%22%20stroke%3D%22%23e0201a%22%20stroke-width%3D%229%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f5fb;--card:#fff;--ink:#141a46;--mute:#5c6280;--line:#e0e3f1;--g:#1f2766;--gd:#141a46;--gl:#e8eafa;--acc:#e0201a;--logo-n:#1b2160;--warn:#d9822b;--warnbg:#fdf0e1;--red:#c0392b}
+@media(prefers-color-scheme:dark){:root{--bg:#0c1030;--card:#151a45;--ink:#eceefb;--mute:#a3a9cf;--line:#272d63;--g:#5560d6;--gd:#a9b1ff;--gl:#1e2559;--acc:#ff5a4d;--logo-n:#e4e6ff;--warn:#f0a050;--warnbg:#3a2a16;--red:#ff7b6b}}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Hind,"Noto Sans Devanagari",system-ui,sans-serif;font-size:17px;line-height:1.5}
+body{padding:env(safe-area-inset-top) 0 calc(76px + env(safe-area-inset-bottom))}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+header{margin-top:calc(-1*env(safe-area-inset-top))}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}.brand .mark{width:30px;height:38px;flex:none}.bn{font-size:24px;font-weight:700;letter-spacing:-.5px;line-height:1}.bn span{color:var(--acc)}
+main{max-width:640px;margin:0 auto;padding:16px}
+h2{font-size:22px;margin:4px 0 4px}
+.sub{color:var(--mute);margin:0 0 14px}
+button,.btn{font:inherit;font-weight:600;border:0;border-radius:12px;padding:12px 16px;min-height:48px;background:var(--g);color:#fff;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+button:hover,.btn:hover{background:var(--gd)}
+.danger{width:100%;background:var(--warnbg);color:var(--red);border:1.5px solid var(--red);border-radius:14px;min-height:52px;font-size:17px}
+.danger:hover{background:var(--red);color:#fff}
+.ghost{background:transparent;color:var(--gd);border:1.5px solid var(--g)}
+.ghost:hover{background:var(--gl)}
+.tiny{min-height:36px;padding:6px 12px;font-size:15px}
+.link{background:none;color:var(--mute);min-height:32px;padding:4px 6px;font-weight:500;font-size:14px}
+.link:hover{background:none;color:var(--red)}
+button:disabled{opacity:.5;cursor:default}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.big{width:100%;margin-bottom:14px;font-size:18px;min-height:54px}
+.card{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--g);border-radius:14px;padding:14px;margin-bottom:12px}
+.card.need{border-left-color:var(--warn)}
+.card.mine{border-left-color:var(--mute)}
+.card h3{margin:0 0 2px;font-size:18px;line-height:1.35;word-break:break-word}
+.meta{color:var(--mute);font-size:15px;margin:0 0 10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chip{background:var(--gl);color:var(--gd);border-radius:99px;padding:2px 12px;font-size:14px;font-weight:600}
+.chip.w{background:var(--warnbg);color:var(--warn)}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row>*{flex:1 1 140px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.stat b{display:block;font-size:30px;color:var(--gd)}
+.empty{text-align:center;color:var(--mute);padding:36px 12px;border:2px dashed var(--line);border-radius:14px}
+dialog{border:0;border-radius:18px;padding:20px;width:min(92vw,460px);background:var(--card);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{font:inherit;width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+small{color:var(--mute)}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:12px 18px;border-radius:12px;max-width:88vw;z-index:20;display:none;font-size:16px}
+.rules li{margin-bottom:8px}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+@media(prefers-reduced-motion:no-preference){.card{transition:transform .15s}.card:hover{transform:translateY(-2px)}}
+.thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;background:var(--gl);margin-bottom:10px;cursor:pointer}
+.ago.new{color:var(--acc);font-weight:600}
+.sk-b{display:block;border-radius:8px;background:var(--line)}
+.card.sk{pointer-events:none}.card.sk .thumb{cursor:default;background:var(--line)}
+.sk-t{height:22px;width:78%;margin:2px 0 6px}.sk-m{height:15px;width:42%;margin:0 0 14px}.sk-c{height:28px;width:150px;border-radius:99px}.sk-btn{height:48px;border-radius:12px}.sk-l{height:16px;width:64px;margin:14px 0 8px}
+@media(prefers-reduced-motion:no-preference){.sk-b{background:linear-gradient(100deg,var(--line) 30%,var(--gl) 50%,var(--line) 70%);background-size:300% 100%;animation:skm 1.3s ease-in-out infinite}@keyframes skm{from{background-position:100% 0}to{background-position:0 0}}}
+.note{background:var(--gl);border-radius:10px;padding:8px 12px;margin:0 0 12px;font-size:15px;word-break:break-word}
+.sug{border:1.5px solid var(--line);border-radius:10px;margin-top:6px;max-height:240px;overflow:auto;background:var(--bg)}
+.sug button{width:100%;justify-content:flex-start;background:transparent;color:var(--ink);border-radius:0;text-align:left;font-weight:500;border-bottom:1px solid var(--line)}
+.sug button:hover{background:var(--gl)}
+.sug img,.pick img{width:36px;height:36px;border-radius:50%;object-fit:cover}
+.signup{text-align:center;padding:36px 20px;background:var(--gl);border-radius:16px;margin-top:10px}
+.signup .semoji{font-size:2.6rem;line-height:1}
+.signup h3{margin:10px 0 6px}
+.signup p{color:var(--muted,#667);max-width:320px;margin:0 auto 18px;font-size:.92rem}
+.signup button.big{display:inline-flex;align-items:center;justify-content:center;background:#fff;color:#222;border:1px solid #ddd;border-radius:999px;padding:12px 22px;font-weight:600;font-size:1rem;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.signup small{display:block;margin-top:12px;color:var(--muted,#889)}
+.pick.big img,.pick.big .ph{width:64px;height:64px}.pick.big b{font-size:1.1rem}.ph{display:inline-flex;align-items:center;justify-content:center;border-radius:50%;background:var(--g,#1f2766);color:#fff;font-weight:700;font-size:1.6rem}
+.pick{display:flex;align-items:center;gap:10px;background:var(--gl);border-radius:10px;padding:8px 12px;margin-top:8px}
+.warnbox{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:8px 12px;margin-top:8px;font-size:15px}
+.pv{margin-top:10px}
+textarea{font:inherit;width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);resize:vertical}
+#dHelp{width:min(96vw,520px);padding:16px}
+.player{position:relative;aspect-ratio:16/9;background:#000;border-radius:12px;overflow:hidden}
+#pwrap{position:absolute;inset:0}#pwrap iframe{width:100%;height:100%;border:0}
+.banner{position:absolute;left:0;right:0;bottom:46px;z-index:3;padding:26px 12px 10px;text-align:center;background:linear-gradient(transparent,rgba(0,0,0,.88) 40%);color:#fff}
+.banner p{margin:0 0 8px;font-weight:600;font-size:15px;line-height:1.35}
+.banner button{background:#e62117;color:#fff;min-height:40px;padding:8px 20px;border-radius:99px;font-size:16px}
+.banner button:hover{background:#c41a11}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:12px 0 6px}
+.bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .25s}
+.lgn{fill:var(--logo-n)}.lgs{stroke:var(--logo-n)}
+.signup .semoji svg{width:56px;height:70px}
+.splash{--logo-n:#fff;position:fixed;inset:0;z-index:100;background:radial-gradient(120% 90% at 50% 0%,#2b3270 0%,#141a46 60%,#0c1030 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;overflow:auto;transition:opacity .4s,visibility .4s}
+.splash.out{opacity:0;visibility:hidden}
+.splash .mark{width:92px;height:116px}
+.splash .sn{font-size:42px;font-weight:700;letter-spacing:-1px;line-height:1.1;margin:14px 0 4px}.splash .sn span{color:#ff5a4d}
+.splash .st{font-size:12px;letter-spacing:.28em;color:#b4b9e0;font-weight:600}
+.splash h1{font-size:26px;line-height:1.35;margin:30px 0 10px;max-width:420px}
+.splash p{color:#cfd3f0;max-width:380px;margin:0 0 28px;font-size:17px}
+.splash button{background:#e0201a;color:#fff;min-height:54px;padding:12px 38px;border-radius:99px;font-size:18px}
+.splash button:hover{background:#b8150f}
+@media(prefers-reduced-motion:no-preference){.splash .in{animation:rise .7s both}.splash .in:nth-child(2){animation-delay:.12s}.splash .in:nth-child(3){animation-delay:.24s}.splash .in:nth-child(4){animation-delay:.36s}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.okrow{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.plus{width:48px;height:48px;min-height:48px;padding:0;border-radius:50%;flex:none}
+.plus svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+[hidden]{display:none!important}
+
+*{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+input,textarea,select{-webkit-user-select:text;user-select:text}
+html,body{touch-action:pan-x pan-y;overscroll-behavior-y:contain;-webkit-text-size-adjust:100%}
+img{-webkit-user-drag:none}
+header{will-change:transform}body:not([data-v="home"]) header{display:none}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom);z-index:6;will-change:transform}
+
+nav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:8px 4px 10px;color:var(--mute);text-decoration:none;font-size:12px;font-weight:500}
+nav a i{display:flex;align-items:center;justify-content:center;width:58px;height:30px;border-radius:99px;transition:background .2s}
+nav a.on{color:var(--gd);font-weight:700}nav a.on i{background:var(--gl)}nav a.on svg{stroke-width:2.3}
+nav svg,.icb svg,.srow svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.icb{background:none;color:var(--ink);width:44px;height:44px;min-height:44px;padding:0;border-radius:99px}.icb:hover{background:var(--gl)}
+.hrow{display:flex;align-items:center;justify-content:space-between;gap:8px}
+dialog.sheet{margin:auto auto 0;width:100%;max-width:520px;border-radius:22px 22px 0 0;padding:10px 16px calc(18px + env(safe-area-inset-bottom))}
+.grab{width:40px;height:4px;border-radius:9px;background:var(--line);margin:0 auto 10px}
+.sheet h3{margin:4px 4px 8px;font-size:19px}
+dialog.sheet[open]{animation:sheetUp .28s cubic-bezier(.2,.8,.2,1)}
+@keyframes sheetUp{from{transform:translateY(100%)}to{transform:none}}
+dialog.rep{max-height:88vh;overflow:auto}
+.rsub{color:var(--mute);margin:0 4px 6px;font-size:15px}
+.rrow{display:flex;align-items:center;gap:14px;min-height:52px;padding:6px 8px;border-radius:12px;cursor:pointer;font-weight:500;position:relative}
+.rrow:active{background:var(--gl)}
+.rrow input{position:absolute;opacity:0;pointer-events:none}
+.rdot{width:22px;height:22px;border-radius:50%;border:2px solid var(--mute);display:grid;place-items:center;flex:none;transition:border-color .15s}
+.rdot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--g);transform:scale(0);transition:transform .15s}
+.rrow input:checked+.rdot{border-color:var(--g)}.rrow input:checked+.rdot::after{transform:scale(1)}
+.rrow input:focus-visible+.rdot{outline:3px solid var(--acc);outline-offset:2px}
+.rnote{display:block;width:100%;min-height:84px;resize:none;margin:4px 0 6px;font:inherit;padding:12px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.ract{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.rtxt{background:none;color:var(--gd);min-height:44px;padding:8px 18px;border-radius:99px}.rtxt:hover{background:var(--gl);color:var(--gd)}
+.rok{border-radius:99px;min-height:44px;padding:8px 26px}
+.rdone{text-align:center;padding:18px 8px 8px}.rdone h3{margin:0 0 4px}
+.rtick{width:68px;height:68px;border-radius:50%;background:var(--gl);margin:0 auto 12px;display:grid;place-items:center}
+.rtick svg{width:36px;height:36px;stroke:var(--gd);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;stroke-dashoffset:30;animation:tick .45s .1s ease forwards}
+@keyframes tick{to{stroke-dashoffset:0}}
+.srow{display:flex;align-items:center;gap:14px;width:100%;min-height:56px;padding:8px 10px;border-radius:12px;background:none;color:var(--ink);font-weight:500;justify-content:flex-start;text-align:left}
+button.srow:hover{background:var(--gl);color:var(--ink)}.srow span{flex:1}.srow.red{color:var(--red)}button.srow.red:hover{background:var(--warnbg);color:var(--red)}
+.seg{display:flex;border:1.5px solid var(--g);border-radius:99px;overflow:hidden}.seg button{border-radius:0;min-height:36px;padding:4px 14px;background:transparent;color:var(--gd);font-size:15px}.seg button.on{background:var(--g);color:#fff}
+.hint{margin:0 10px 8px 48px;font-size:14px}
+.sec h3{margin:0 0 8px;font-size:18px}.sec.ban{border-left:6px solid var(--red)}
+.rules.x{list-style:none;padding-left:0}.rules.x li{position:relative;padding-left:26px}.rules.x li::before{content:"✕";position:absolute;left:2px;color:var(--red);font-weight:700}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="36 28 148 186"><circle class="lgn" cx="110" cy="56" r="24"/><path class="lgs" d="M48 172C48 126 72 100 110 100C148 100 172 126 172 172" fill="none" stroke-width="16" stroke-linecap="round"/><path fill="#e0201a" d="M96 122Q96 117 101 120L128 137Q132 140 128 143L101 160Q96 163 96 158Z"/><path d="M42 192Q110 222 178 192" fill="none" stroke="#e0201a" stroke-width="9" stroke-linecap="round"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" viewBox="0 0 24 24">
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.3A4.2 4.2 0 0 1 12 7.2a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5h11a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="M8.3 10.8l7.4-4.3M8.3 13.2l7.4 4.3"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+<symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 19h14"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13M10 11v6M14 11v6"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-uadd" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4"/><path d="M2.5 20c0-4 3.4-6 7.5-6M18 9v6M15 12h6"/></symbol>
+</svg>
+<div class="splash" id="splash" role="dialog" aria-label="YT Growly में आपका स्वागत है">
+ <div class="in"><svg class="mark" aria-hidden="true"><use href="#lg"/></svg><div class="sn"><span>YT</span> Growly</div><div class="st">YOUTUBE CREATOR SUPPORT</div></div>
+ <h1 class="in">हर नए क्रिएटर को चाहिए एक सहारा</h1>
+ <p class="in">किसी नए YouTuber का पहला व्यू, पहला कमेंट, पहला सब्सक्राइबर: आपकी एक मदद से उसका हौसला बढ़ता है। आइए, इस सफ़र में उसका साथ दें।</p>
+ <button class="in" id="splashGo" type="button">शुरू करें</button>
+</div>
+<script>
+(function(){var s=document.getElementById("splash");
+// जिसने पहले साइन अप किया है (इस फ़ोन में याद रखा गया), उसे यह स्क्रीन कभी नहीं दिखेगी
+try{if(localStorage.getItem("ytg_member")==="1"){s.remove();return}}catch(e){}
+window.ytgSplashHide=function(){if(!s.isConnected)return;s.classList.add("out");setTimeout(function(){s.remove()},450)};
+document.getElementById("splashGo").addEventListener("click",function(){
+ window.ytgSplashHide()});})();
+</script>
+<header><a class="brand" href="#home" aria-label="YT Growly"><svg class="mark" aria-hidden="true"><use href="#lg"/></svg><span class="bn"><span>YT</span> Growly</span></a><button class="icb" type="button" aria-label="सेटिंग्स" onclick="G.settings()"><svg aria-hidden="true"><use href="#i-gear"/></svg></button></header>
+<main id="app"></main>
+<nav>
+ <a href="#home" data-v="home"><i><svg aria-hidden="true"><use href="#i-home"/></svg></i>फ़ीड</a>
+ <a href="#helped" data-v="helped"><i><svg aria-hidden="true"><use href="#i-heart"/></svg></i>मेरी मदद</a>
+ <a href="#profile" data-v="profile"><i><svg aria-hidden="true"><use href="#i-user"/></svg></i>प्रोफ़ाइल</a>
+ <a href="#rules" data-v="rules"><i><svg aria-hidden="true"><use href="#i-book"/></svg></i>नियम</a>
+</nav>
+<dialog id="dSet" class="sheet"></dialog>
+<dialog id="dRep" class="sheet rep"></dialog>
+<div id="toast" role="status"></div>
+
+<dialog id="dProfile"><form method="dialog" id="fProfile">
+ <h2>आपका चैनल</h2><p class="sub">उसी Gmail से जुड़ें जिससे YouTube चैनल बना है।</p>
+ <label>अपने चैनल का लिंक डालिए</label>
+ <input id="pUrl" type="url" autocomplete="off" required placeholder="https://youtube.com/@aapkachannel">
+ <div id="pPv" class="pv" hidden></div>
+ <div id="manualBox" hidden>
+  <label>चैनल का नाम</label><input id="pName" maxlength="60">
+  <small>चैनल अपने-आप नहीं मिला, नाम यहाँ खुद लिख दीजिए।</small>
+ </div>
+ <label>विषय</label><input id="pTopic" maxlength="40" placeholder="जैसे: खाना, गेमिंग, पढ़ाई" required>
+ <div class="row" style="margin-top:16px"><button type="button" class="ghost" onclick="dProfile.close()">रद्द</button><button>सेव करें</button></div>
+</form></dialog>
+
+<dialog id="dSos"><form method="dialog" id="fSos">
+ <h2>अपना SOS लगाएँ</h2><p class="sub" id="sSub">आपका वीडियो 12 घंटे तक SOS FEED में टॉप पर रहेगा</p>
+ <label>वीडियो का लिंक</label><input id="sUrl" type="url" placeholder="https://youtu.be/..." required>
+ <div id="sPv" class="pv" hidden></div>
+ <label>वीडियो का नाम</label><input id="sTitle" maxlength="80" required>
+ <label>अपनी बात (चाहें तो)</label><textarea id="sNote" maxlength="120" rows="2" placeholder="जैसे: मदद कीजिए, सच्चा कमेंट कीजिए 🙏"></textarea>
+ <small>सिर्फ़ YouTube वीडियो का लिंक डालें।</small>
+ <div class="row" style="margin-top:16px"><button type="button" class="ghost" onclick="dSos.close()">रद्द</button><button>SOS लगाएँ</button></div>
+</form></dialog>
+
+<dialog id="dHelp"><div>
+ <h3 style="margin:0 0 4px" id="hTitle"></h3>
+ <div class="player"><div id="pwrap"></div>
+  <div class="banner" id="hBanner" hidden><p>अपने साथी को दिल से सपोर्ट देने के लिए सब्सक्राइब नाउ</p><button type="button" id="hSub">Subscribe Now</button></div>
+ </div>
+ <div class="bar"><i id="hBar"></i></div>
+ <p class="meta" id="hStat" style="margin:0 0 6px"></p>
+ <small id="hHint"></small>
+ <div class="row" style="margin-top:14px"><button type="button" class="ghost" id="hCancel">बंद करें</button><button type="button" id="hDone" disabled>मैंने मदद की</button></div>
+</div></dialog>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getAuth,GoogleAuthProvider,signInWithPopup,signInWithRedirect,getRedirectResult,signInWithCredential,signOut,onAuthStateChanged,reauthenticateWithPopup,deleteUser} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {getFirestore,startAfter,doc,getDoc,setDoc,updateDoc,addDoc,collection,query,where,orderBy,limit,getDocs,onSnapshot,deleteDoc,writeBatch,serverTimestamp,increment,Timestamp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig={apiKey:"AIzaSyBcsuneNkMTbIK7gwqNlk4krGkFjhRKAkc",authDomain:"growly-974ce.firebaseapp.com",projectId:"growly-974ce",storageBucket:"growly-974ce.firebasestorage.app",messagingSenderId:"976715163266",appId:"1:976715163266:web:75983be3c978079201b69b"};
+// SOS नियम: पहले DEFAULT_MIN_HELPS (2) नए लोगों को मदद -> तब SOS। एक व्यक्ति का अगला SOS TOP_HOURS (12) घंटे बाद।
+// फ़ीड में SOS की कोई सीमा नहीं: PAGE (20) के हिसाब से नीचे स्क्रॉल करने पर और आते रहते हैं। नया SOS सबसे ऊपर।
+const DEFAULT_MIN_HELPS=2, HOUR=3600000, PAGE=20,TOP_HOURS=12,MAX_BONUS=12, WATCH_SECS=30, BANNER_LEAD=7;
+// Google Cloud → APIs & Services → YouTube Data API v3 चालू करके API key बनाइए, और अपनी साइट के पते तक सीमित कीजिए
+const YT_API_KEY="AIzaSyAxiBbGIR8dEy0B6hOeQlnAVX_t3FMU_lw";
+
+const fb=initializeApp(firebaseConfig), auth=getAuth(fb), db=getFirestore(fb);
+const $=id=>document.getElementById(id);
+const S={user:null,profile:null,minHelps:DEFAULT_MIN_HELPS,sos:[],helpedIds:new Set(),helpedList:[],mySos:[],view:"home",loading:true};
+S.hydrated=false;S.hint=null;S.at=0;S.uat=0;S.uid=null;S.cachedP=null;S.busy=false;S.oldest=0;S.hasMore=true;S.moreBusy=false;
+const FEED_TTL=3*60*60000,USER_TTL=6*60*60000; // इतने समय तक सर्वर से दोबारा डेटा नहीं माँगेंगे (Firestore reads बचते हैं)
+const SK=n=>Array.from({length:n},()=>`<article class="card sk" aria-hidden="true"><div class="thumb sk-b"></div><div class="sk-b sk-t"></div><div class="sk-b sk-m"></div><div class="chips"><span class="sk-b sk-c"></span></div><div class="row"><span class="sk-b sk-btn"></span><span class="sk-b sk-btn"></span></div><span class="sk-b sk-l"></span></article>`).join("");
+// ---- local cache: पिछली बार का फ़ीड तुरंत दिखाओ, फिर पीछे से ताज़ा डेटा लाओ
+const CK="ytg_feed_v1",UK=u=>"ytg_user_v1_"+u;
+const ser=v=>v&&typeof v.toMillis==="function"?{__ms:v.toMillis()}:Array.isArray(v)?v.map(ser):v&&typeof v==="object"?Object.fromEntries(Object.entries(v).map(([k,x])=>[k,ser(x)])):v;
+const rev=(k,v)=>v&&typeof v==="object"&&typeof v.__ms==="number"?Timestamp.fromMillis(v.__ms):v;
+function cacheSave(){try{const big=S.sos.length>200,l=big?S.sos.slice(0,200):S.sos,o=big?Math.min(...l.map(x=>ms(x.createdAt))):S.oldest;localStorage.setItem(CK,JSON.stringify({sos:ser(l),min:S.minHelps,t:S.at,o,hm:big?true:S.hasMore}));if(S.user)localStorage.setItem(UK(S.user.uid),JSON.stringify({h:ser(S.helpedList),m:ser(S.mySos),p:ser(S.profile),t:S.uat}))}catch(e){}}
+function userCacheLoad(uid){try{const u=JSON.parse(localStorage.getItem(UK(uid)),rev);if(u){S.helpedList=u.h||[];S.helpedIds=new Set(S.helpedList.map(x=>x.id));S.mySos=u.m||[];S.uid=uid;S.uat=u.t||0;S.cachedP=u.p||null}}catch(e){}}
+function userReset(){S.helpedList=[];S.helpedIds=new Set();S.mySos=[];S.uid=null;S.uat=0;S.cachedP=null}
+try{
+  const c=JSON.parse(localStorage.getItem(CK),rev);
+  if(c&&c.sos&&c.sos.length){S.sos=c.sos;S.minHelps=c.min??S.minHelps;S.at=c.t||0;S.hydrated=true;S.loading=false;S.oldest=c.o||Math.min(Date.now(),...c.sos.map(x=>x.createdAt&&x.createdAt.toMillis?x.createdAt.toMillis():Date.now()));S.hasMore=c.hm??true}
+  S.hint=localStorage.getItem("ytg_uid");if(S.hint)userCacheLoad(S.hint);
+}catch(e){}
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const YT=/^https?:\/\/(www\.|m\.)?(youtube\.com\/(watch\?|shorts\/)|youtu\.be\/)\S+$/i;
+const ms=t=>t?.toMillis?t.toMillis():0;
+function toast(m){const t=$("toast");t.textContent=m;t.style.display="block";clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display="none",3800)}
+
+const eff=x=>ms(x.createdAt)+(x.bonus||0)*HOUR; // ज़्यादा मदद = हर मदद पर 1 घंटा ज़्यादा ऊपर
+const combine=list=>{const m=new Map();for(const x of list){const e=m.get(x.ownerUid);if(!e||ms(x.createdAt)>ms(e.createdAt))m.set(x.ownerUid,x)}return [...m.values()].sort((a,b)=>eff(b)-eff(a))}; // एक owner का सिर्फ़ सबसे नया SOS; नया ऊपर
+const rawOf=snap=>snap.docs.map(d=>({id:d.id,...d.data()})).filter(x=>x.ownerUid&&x.createdAt);
+function applyFeed(snap,first){
+  const raw=rawOf(snap);
+  if(first){S.sos=combine(raw);S.oldest=raw.length?Math.min(...raw.map(x=>ms(x.createdAt))):0;S.hasMore=snap.size>=PAGE;return}
+  // ताज़ा करना: सिर्फ़ ऊपर के पेज की गिनती/हटाए गए SOS ठीक होते हैं; नीचे का जमा हुआ फ़ीड वैसा ही रहता है
+  if(!raw.length){S.sos=[];S.hasMore=false;return}
+  const hi=Math.max(...raw.map(x=>ms(x.createdAt))),lo=Math.min(...raw.map(x=>ms(x.createdAt))),full=snap.size>=PAGE;
+  const base=S.sos.filter(x=>{const t=ms(x.createdAt);return t>hi||(full&&t<lo)});
+  S.sos=combine([...raw,...base]);
+  if(!full){S.hasMore=false;S.oldest=lo}
+}
+async function loadAll(force){
+  if(S.busy)return;
+  const now=Date.now(),needFeed=!!force||!S.hydrated||now-S.at>FEED_TTL;
+  const needUser=!!S.user&&(!!force||S.uid!==S.user.uid||now-S.uat>USER_TTL);
+  if(!needFeed&&!needUser){S.loading=false;render();startLive();return} // सब कुछ ताज़ा है: सर्वर से 0 reads
+  S.busy=true;S.loading=!S.hydrated;render();
+  try{
+    if(needFeed){
+      const first=!S.hydrated||!S.sos.length;
+      try{const c=await getDoc(doc(db,"config","settings"));if(c.exists())S.minHelps=c.data().minHelps??DEFAULT_MIN_HELPS}catch(e){}
+      const snap=await getDocs(query(collection(db,"sos"),orderBy("createdAt","desc"),limit(PAGE)));
+      applyFeed(snap,first);
+      S.at=Date.now();S.hydrated=true;
+    }
+    if(needUser){
+      const h=await getDocs(collection(db,"users",S.user.uid,"helped"));
+      S.helpedList=h.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>ms(b.createdAt)-ms(a.createdAt));
+      S.helpedIds=new Set(S.helpedList.map(x=>x.id));
+      const m=await getDocs(query(collection(db,"sos"),where("ownerUid","==",S.user.uid)));
+      S.mySos=m.docs.map(d=>({id:d.id,...d.data()}));
+      S.uat=Date.now();S.uid=S.user.uid;
+    }
+    cacheSave();
+  }catch(e){console.error(e);toast("लोड नहीं हो पाया। इंटरनेट देखकर दोबारा कोशिश कीजिए।")}
+  S.busy=false;S.loading=false;render();startLive();
+}
+
+// ---- नीचे स्क्रॉल करने पर और SOS (20-20 करके, कोई सीमा नहीं)
+let mo=null;
+function watchMore(){
+  if(mo){mo.disconnect();mo=null}
+  const el=$("moreS");if(!el)return;
+  mo=new IntersectionObserver(es=>{if(es[0].isIntersecting)loadMore()},{rootMargin:"500px"});mo.observe(el);
+}
+async function loadMore(){
+  if(S.moreBusy||!S.hasMore||S.loading||!S.oldest)return;
+  S.moreBusy=true;let ok=false;
+  try{
+    const snap=await getDocs(query(collection(db,"sos"),orderBy("createdAt","desc"),startAfter(Timestamp.fromMillis(S.oldest)),limit(PAGE)));
+    const raw=rawOf(snap);
+    S.sos=combine([...S.sos,...raw]);
+    if(raw.length)S.oldest=Math.min(...raw.map(x=>ms(x.createdAt)));
+    S.hasMore=snap.size>=PAGE;cacheSave();ok=true;
+  }catch(e){console.error(e)}
+  S.moreBusy=false;
+  if(ok&&S.view==="home")render();
+}
+
+// ---- LIVE दरवाज़ा: ऐप खुलते ही (cache से भी पहले) Firebase में "सबसे नई पोस्ट के बाद" वाले SOS ढूँढता है।
+// मिले तो तुरंत सबसे ऊपर लगते हैं, और आगे भी कोई नया SOS लगाए तो बिना refresh अपने-आप ऊपर आ जाता है। पुराने documents दोबारा नहीं पढ़े जाते।
+function addLive(x){
+  const ex=S.sos.find(y=>y.ownerUid===x.ownerUid);
+  if(ex&&ex.id!==x.id&&ms(ex.createdAt)>ms(x.createdAt))return false; // एक owner की सिर्फ़ सबसे नई पोस्ट
+  S.sos=combine([x,...S.sos.filter(y=>y.id!==x.id)]);
+  return true;
+}
+function renderKeep(){ // नया card ऊपर जुड़े तो स्क्रीन की जगह न खिसके
+  const y=scrollY,h=document.documentElement.scrollHeight;render();
+  if(y>40){const d=document.documentElement.scrollHeight-h;if(d>0){scrollTo(0,y+d);ly=Math.max(0,scrollY)}}
+}
+let liveRetry=0;
+function startLive(){
+  if(S.unsub||!S.hydrated)return;
+  const since=S.sos.reduce((m,x)=>Math.max(m,ms(x.createdAt)),0);
+  let firstSnap=true;
+  try{
+    S.unsub=onSnapshot(query(collection(db,"sos"),where("createdAt",">",Timestamp.fromMillis(since)),orderBy("createdAt","desc"),limit(30)),snap=>{
+      if(firstSnap){firstSnap=false;
+        if(snap.size>=30){ // बहुत दिन बाद लौटे: बीच में बहुत SOS आ गए, इसलिए फ़ीड ऊपर से दोबारा बनाओ
+          if(S.unsub){S.unsub();S.unsub=null}
+          S.sos=[];S.hydrated=false;S.hasMore=true;S.at=0;loadAll(true);return}}
+      let ch=false;
+      snap.docChanges().forEach(c=>{
+        if(c.type==="removed"){const n=S.sos.length;S.sos=S.sos.filter(y=>y.id!==c.doc.id);if(S.sos.length!==n)ch=true;return}
+        if(c.type==="modified"&&S.sos.some(y=>y.id===c.doc.id))return; // गिनती का बदलाव live नहीं दिखाते: वह तीन घंटे वाले refresh में आएगा
+        const x={id:c.doc.id,...c.doc.data({serverTimestamps:"estimate"})};
+        if(!x.ownerUid||!x.createdAt)return;
+        if(addLive(x))ch=true;
+      });
+      if(ch){cacheSave();if(S.view==="home"&&!S.loading)renderKeep()}
+    },err=>{console.error(err);S.unsub=null;if(liveRetry++<5)setTimeout(startLive,30000)});
+  }catch(e){console.error(e);S.unsub=null}
+}
+// ऐप दोबारा खुलने/टैब पर लौटने पर: डेटा पुराना हो चुका हो तभी ताज़ा करो
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)loadAll()});
+setInterval(()=>{if(!document.hidden)loadAll()},5*60000); // ऐप खुला रहे तो भी: 1 घंटा पूरा होते ही गिनती ताज़ा; उससे पहले 0 reads
+
+onAuthStateChanged(auth,async u=>{
+  S.user=u;S.profile=null;
+  try{if(u){localStorage.setItem("ytg_member","1");localStorage.setItem("ytg_uid",u.uid)}else{localStorage.removeItem("ytg_member");localStorage.removeItem("ytg_uid");if(S.hint)localStorage.removeItem(UK(S.hint))}}catch(e){}
+  if(u){if(S.hint!==u.uid){userReset();S.hint=u.uid;userCacheLoad(u.uid)}}else{if(S.hint)S.at=0;S.hint=null;userReset()}
+  if(u&&window.ytgSplashHide)window.ytgSplashHide();
+  if(S.hydrated)startLive(); // cache मौजूद है: नए SOS की खोज तुरंत शुरू
+  if(u){
+    if(S.cachedP&&S.uid===u.uid&&Date.now()-S.uat<=USER_TTL)S.profile=S.cachedP; // ताज़ा cache है: profile के लिए भी read नहीं
+    else{try{const p=await getDoc(doc(db,"users",u.uid));S.profile=p.exists()?p.data():null}catch(e){console.error(e)}}
+  }
+  await loadAll();
+  if(u&&!S.profile)openProfile();
+});
+
+// Firebase Console → Authentication → Sign-in method → Google → Web SDK configuration → "Web client ID" यहाँ चिपकाइए
+const WEB_CLIENT_ID="976715163266-6nejv89bhvptscf3fdursohin3cve4g8.apps.googleusercontent.com";
+const USE_GOOGLE_BUTTON=false; // true करने पर Google का अपना बटन चलेगा (Cloud Console में origin जोड़ना पड़ता है)
+const useGsi=()=>USE_GOOGLE_BUTTON&&!WEB_CLIENT_ID.startsWith("PASTE");
+function drawG(){
+  if(!useGsi()||S.user)return;
+  const el=$("gbtn");if(!el)return;
+  if(!window.google?.accounts?.id){setTimeout(drawG,400);return}
+  google.accounts.id.initialize({client_id:WEB_CLIENT_ID,callback:async r=>{
+    try{await signInWithCredential(auth,GoogleAuthProvider.credential(r.credential))}
+    catch(e){console.error(e);toast("Login नहीं हो पाया ("+(e.code||"error")+")")}}});
+  google.accounts.id.renderButton(el,{theme:"filled_blue",size:"medium",text:"signin_with",shape:"pill"});
+}
+async function login(){
+  if(useGsi()){scrollTo(0,0);toast("ऊपर वाले 'Sign in with Google' बटन से जुड़िए");return}
+  const prov=new GoogleAuthProvider();
+  const mobile=/Android|iPhone|iPad|Mobile/i.test(navigator.userAgent);
+  try{
+    await signInWithPopup(auth,prov);
+  }catch(e){
+    if(e.code==="auth/popup-closed-by-user"||e.code==="auth/cancelled-popup-request")return;
+    if(e.code==="auth/popup-blocked"){try{await signInWithRedirect(auth,prov);return}catch(x){e=x}}
+    console.error(e);toast("Login नहीं हो पाया ("+(e.code||"error")+")");
+  }
+}
+getRedirectResult(auth).catch(e=>{console.error(e);toast("Login नहीं हो पाया ("+(e.code||"error")+")")});
+async function deleteAccount(){
+  if(!S.user)return;
+  if(!confirm("क्या आप सच में अपना अकाउंट हटाना चाहते हैं?\n\nआपकी प्रोफ़ाइल, आपका SOS वीडियो और आपकी मदद की सूची हमेशा के लिए हट जाएगी। यह वापस नहीं होगा।"))return;
+  const u=auth.currentUser,uid=u.uid;
+  try{
+    await reauthenticateWithPopup(u,new GoogleAuthProvider()); // सुरक्षा के लिए एक बार फिर Google से पुष्टि
+    const mine=await getDocs(query(collection(db,"sos"),where("ownerUid","==",uid)));
+    const hel=await getDocs(collection(db,"users",uid,"helped"));
+    const refs=[...mine.docs.map(d=>d.ref),...hel.docs.map(d=>d.ref)];
+    for(let i=0;i<refs.length;i+=400){const b=writeBatch(db);refs.slice(i,i+400).forEach(r=>b.delete(r));await b.commit()}
+    try{await deleteDoc(doc(db,"users",uid))}catch(e){}
+    await deleteUser(u);
+    S.profile=null;toast("आपका अकाउंट हटा दिया गया");go("home");
+  }catch(e){
+    if(e.code==="auth/popup-closed-by-user"||e.code==="auth/cancelled-popup-request")return;
+    console.error(e);toast("अकाउंट नहीं हट पाया ("+(e.code||"error")+"). दोबारा कोशिश कीजिए");
+  }
+}
+
+function openProfile(){
+  const p=S.profile||{};
+  chInfo=p.channelName?{id:p.channelId||"",name:p.channelName,url:p.channelUrl,thumb:p.channelThumb||"",subs:(typeof p.subCount==="number"&&p.subCount>=0)?p.subCount:null}:null;
+  $("pTopic").value=p.topic||"";
+  $("pUrl").value=p.channelUrl||"";$("pName").value=p.channelName||"";
+  $("manualBox").hidden=true;$("pPv").hidden=true;
+  if(chInfo)showPick(chInfo);
+  dProfile.showModal();
+}
+$("fProfile").addEventListener("submit",async e=>{
+  const man=!$("manualBox").hidden;
+  const url=$("pUrl").value.trim(),name=((man?$("pName").value.trim():chInfo?.name)||""),topic=$("pTopic").value.trim();
+  if(!name){e.preventDefault();return toast("चैनल का नाम नहीं मिला, नीचे खुद लिख दीजिए")}
+  if(!/^https?:\/\/(www\.|m\.)?youtube\.com\/\S+$/i.test(url)){e.preventDefault();return toast("चैनल का लिंक youtube.com का होना चाहिए")}
+  try{
+    const f={channelName:name.slice(0,60),channelUrl:(man?url:(chInfo?.url||url)),topic:topic.slice(0,40),subs:"",channelId:(man?"":chInfo?.id)||"",channelThumb:(man?"":(chInfo?.thumb||"")).slice(0,300),subCount:(man||chInfo?.subs==null)?-1:Math.floor(chInfo.subs)};
+    if(S.profile){await updateDoc(doc(db,"users",S.user.uid),f);Object.assign(S.profile,f);cacheSave()}
+    else{
+      const z=Timestamp.fromMillis(0);
+      const n={...f,helpedCount:0,helpedAtLastSos:0,lastSosAt:z,activeUntil:z,createdAt:serverTimestamp()};
+      await setDoc(doc(db,"users",S.user.uid),n);S.profile={...n,helpedCount:0,lastSosAt:z,activeUntil:z};cacheSave();
+    }
+    toast("प्रोफ़ाइल सेव हो गई ✅");render();
+  }catch(err){console.error(err);toast("सेव नहीं हो पाया")}
+});
+
+let chInfo=null,pvT,chT,autoTitle="";const chCache={};
+const hasKey=()=>!YT_API_KEY.startsWith("PASTE");
+function vidId(u){try{const x=new URL(u),h=x.hostname.replace(/^(www\.|m\.)/,"");
+  if(h==="youtu.be")return x.pathname.slice(1).split("/")[0]||null;
+  if(h==="youtube.com"){if(x.pathname==="/watch")return x.searchParams.get("v");const m=x.pathname.match(/^\/shorts\/([\w-]+)/);if(m)return m[1]}}catch(e){}return null}
+const thumb=u=>{const i=vidId(u);return i?`https://i.ytimg.com/vi/${i}/hqdefault.jpg`:""};
+function chHandle(u){try{const x=new URL(u.trim()),h=x.hostname.replace(/^(www\.|m\.)/,"");
+  if(h!=="youtube.com")return null;
+  const p=x.pathname.replace(/\/$/,"");
+  if(/^\/@[^/]+$/.test(p))return{by:"forHandle",val:p.slice(1)};
+  let m=p.match(/^\/channel\/([\w-]+)/);if(m)return{by:"id",val:m[1]};
+  m=p.match(/^\/(c|user)\/([^/]+)/);if(m)return{by:m[1]==="user"?"forUsername":"forHandle",val:m[2]};
+  return null;
+}catch(e){return null}}
+$("pUrl").addEventListener("input",()=>{clearTimeout(chT);chT=setTimeout(previewChannel,1500)});
+$("pUrl").addEventListener("paste",()=>setTimeout(previewChannel,60));
+$("pUrl").addEventListener("blur",previewChannel);
+// YouTube API खर्च: channels.list = सिर्फ़ 1 unit (search.list = 100 unit था, वह हटा दिया)।
+// एक ही चैनल के लिए दोबारा API नहीं: मेमोरी + फ़ोन (localStorage) में 7 दिन याद रहता है। रोज़ 10,000 units में 500 लोग आराम से।
+const CHK="ytg_chcache_v1";let chPersist={},lastKey="",inflight="";
+try{chPersist=JSON.parse(localStorage.getItem(CHK)||"{}")||{}}catch(e){}
+function chSave(k,v){chPersist[k]={...v,t:Date.now()};try{const ks=Object.keys(chPersist);if(ks.length>30)delete chPersist[ks[0]];localStorage.setItem(CHK,JSON.stringify(chPersist))}catch(e){}}
+async function previewChannel(){
+  const raw=$("pUrl").value.trim(),pv=$("pPv");
+  if(!/^https?:\/\/(www\.|m\.)?youtube\.com\/\S+$/i.test(raw)){pv.hidden=true;$("manualBox").hidden=true;return}
+  const h=chHandle(raw);
+  if(!h){pv.hidden=true;showManualCh(true);return}
+  if(h.val.replace(/^@/,"").length<3)return;
+  const key=h.by+":"+h.val.toLowerCase();
+  if(key===lastKey&&chInfo)return;
+  if(key===inflight)return;
+  const pc=chPersist[key],c=chCache[key]||(pc&&Date.now()-pc.t<7*864e5?pc:null);
+  if(c){chCache[key]=c;lastKey=key;return drawCh(c,raw)}
+  pv.hidden=false;pv.innerHTML="<small>चैनल की जानकारी ला रहे हैं…</small>";
+  if(!hasKey()){pv.innerHTML="<small>चैनल अपने-आप नहीं आ रहा, नीचे नाम खुद लिख दीजिए।</small>";showManualCh(true);return}
+  inflight=key;
+  try{
+    const r=await fetch(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&fields=items(id,snippet(title,customUrl,thumbnails(default(url),medium(url))),statistics(subscriberCount,hiddenSubscriberCount))&${h.by}=${encodeURIComponent(h.val)}&key=${YT_API_KEY}`);
+    const d=await r.json();if(!r.ok)throw d;
+    const item=d.items?.[0];if(!item)throw 0;
+    const subs=item.statistics&&!item.statistics.hiddenSubscriberCount?+item.statistics.subscriberCount:null;
+    const cu=item.snippet.customUrl||"";const curl=cu.startsWith("@")?`https://youtube.com/${cu}`:`https://youtube.com/channel/${item.id}`;
+    const ch={id:item.id,name:item.snippet.title,thumb:item.snippet.thumbnails?.medium?.url||item.snippet.thumbnails?.default?.url||"",subs,curl};
+    chCache[key]=ch;chSave(key,ch);lastKey=key;drawCh(ch,raw);
+  }catch(e){console.error(e);pv.innerHTML="<small>चैनल अपने-आप नहीं मिला, नीचे नाम खुद लिख दीजिए।</small>";showManualCh(true)}
+  inflight="";
+}
+function showManualCh(on){$("manualBox").hidden=!on;if(on)$("pName").value=$("pName").value||""}
+function showPick(ch){
+  $("pPv").hidden=false;
+  $("pPv").innerHTML=`<div class="pick">${ch.thumb?`<img alt="" src="${esc(ch.thumb)}">`:""}<div><b>${esc(ch.name)}</b>${ch.subs!=null?`<br><small>${ch.subs.toLocaleString("en-IN")} subscribers</small>`:""}</div></div>`;
+}
+function drawCh(ch,url){chInfo={...ch,url:ch.curl||url};showManualCh(false);showPick(chInfo)}
+$("sUrl").addEventListener("input",()=>{clearTimeout(pvT);pvT=setTimeout(previewVideo,450)});
+let embedBad=false;
+async function previewVideo(){
+  embedBad=false;
+  const url=$("sUrl").value.trim(),pv=$("sPv");
+  if(!YT.test(url)||!vidId(url)){pv.hidden=true;return}
+  const img=`<img class="thumb" alt="" src="${esc(thumb(url))}">`;
+  pv.hidden=false;pv.innerHTML=img+"<small>वीडियो की जानकारी ला रहे हैं…</small>";
+  try{
+    const r=await fetch("https://www.youtube.com/oembed?format=json&url="+encodeURIComponent(url));
+    if(r.status===401||r.status===403){embedBad=true;pv.innerHTML=img+`<div class="warnbox">इस वीडियो में embedding बंद है, इसलिए यह यहाँ चल नहीं पाएगा। YouTube Studio में वीडियो खोलकर “Allow embedding” चालू कीजिए।</div>`;return}
+    if(!r.ok)throw 0;const d=await r.json();
+    const t=$("sTitle");if(!t.value.trim()||t.value===autoTitle){t.value=autoTitle=String(d.title).slice(0,80)}
+    const mine=S.profile&&norm(d.author_name)===norm(S.profile.channelName);
+    pv.innerHTML=img+`<b>${esc(d.title)}</b><br><small>${esc(d.author_name)}</small>`+(mine?"":`<div class="warnbox">यह वीडियो आपके चैनल "${esc(S.profile?.channelName)}" का नहीं दिख रहा। सिर्फ़ अपना वीडियो लगाइए।</div>`);
+  }catch(e){pv.innerHTML=img+"<small>नाम अपने-आप नहीं आया, नीचे खुद लिख दीजिए।</small>"}
+}
+
+function needLogin(){if(!S.user){toast("पहले प्रोफ़ाइल टैब में जाकर Sign Up कीजिए");go("profile");return true}if(!S.profile){openProfile();return true}return false}
+
+function startSos(){
+  if(needLogin())return;
+  const p=S.profile,now=Date.now(),fresh=(p.helpedCount||0)-(p.helpedAtLastSos||0);
+  if(fresh<S.minHelps)return toast(`अपना SOS लगाने के लिए ${S.minHelps-fresh} और वीडियो को मदद कीजिए`);
+  const wait=ms(p.lastSosAt)+TOP_HOURS*HOUR-now;
+  if(wait>0)return toast(`आपका अगला वीडियो ${Math.ceil(wait/HOUR)} घंटे बाद ही लग पाएगा`);
+  $("sTitle").value="";$("sUrl").value="";$("sNote").value="";autoTitle="";embedBad=false;$("sPv").hidden=true;
+  const bn=Math.min(MAX_BONUS,Math.max(0,fresh-S.minHelps)),th=TOP_HOURS+bn;
+  $("sSub").textContent=LANG==="en"?`Your video stays at the top of SOS FEED for ${th} hours`:`आपका वीडियो ${th} घंटे तक SOS FEED में टॉप पर रहेगा`;
+  dSos.showModal();
+}
+$("fSos").addEventListener("submit",async e=>{
+  const title=$("sTitle").value.trim(),url=$("sUrl").value.trim();
+  if(!YT.test(url)){e.preventDefault();return toast("सिर्फ़ YouTube का लिंक चलेगा")}
+  if(embedBad){e.preventDefault();return toast("इस वीडियो में embedding बंद है, पहले उसे चालू कीजिए")}
+  try{
+    const uref=doc(db,"users",S.user.uid),ud=(await getDoc(uref)).data()||{},hc=ud.helpedCount||0,bonus=Math.min(MAX_BONUS,Math.max(0,hc-(ud.helpedAtLastSos||0)-S.minHelps));
+    if(ms(ud.lastSosAt)+TOP_HOURS*HOUR>Date.now())return toast("12 घंटे पूरे होने से पहले दूसरा वीडियो नहीं लग सकता");
+    const b=writeBatch(db),ref=doc(collection(db,"sos")),now=Date.now();
+    b.set(ref,{ownerUid:S.user.uid,title:title.slice(0,80),url,note:$("sNote").value.trim().slice(0,120),channelName:S.profile.channelName,helpCount:0,bonus,createdAt:serverTimestamp()});
+    b.update(uref,{lastSosAt:serverTimestamp(),helpedAtLastSos:hc});
+    await b.commit();
+    S.profile.lastSosAt=Timestamp.fromMillis(now);S.profile.helpedAtLastSos=hc;S.profile.helpedCount=hc;
+    const mineNew={id:ref.id,ownerUid:S.user.uid,title:title.slice(0,80),url,note:$("sNote").value.trim().slice(0,120),channelName:S.profile.channelName,helpCount:0,bonus,createdAt:Timestamp.fromMillis(now)};
+    S.sos=combine([mineNew,...S.sos.filter(x=>x.ownerUid!==S.user.uid)]);S.mySos=[...S.mySos,mineNew];cacheSave();
+    toast("आपका SOS फ़ीड पर लग गया ✅");render();
+  }catch(err){console.error(err);toast("SOS नहीं लग पाया। नियम दोबारा देख लीजिए")}
+});
+
+// ---------- वीडियो हमारे ही प्लेयर में: 30 सेकंड + Subscribe Now बैनर ----------
+const H={id:null,watch:false,vid:"",secs:0,need:WATCH_SECS,clicked:false,playing:false,last:0,saved:0,chUrl:"",busy:false,err:false};
+let P=null,tk=null,ytReady=null;
+const hKey=()=>`ytg_h_${S.user?.uid}_${H.id}`;
+function ytApi(){
+  if(window.YT?.Player)return Promise.resolve();
+  if(!ytReady)ytReady=new Promise((res,rej)=>{
+    window.onYouTubeIframeAPIReady=()=>res();
+    const sc=document.createElement("script");sc.src="https://www.youtube.com/iframe_api";
+    sc.onerror=()=>{ytReady=null;rej()};document.head.appendChild(sc);
+  });
+  return ytReady;
+}
+function saveH(){if(!H.id||H.watch)return;try{localStorage.setItem(hKey(),JSON.stringify({secs:H.secs,clicked:H.clicked,t:Date.now()}))}catch(e){}}
+function loadH(){if(H.watch)return null;try{const v=JSON.parse(localStorage.getItem(hKey())||"null");if(v&&Date.now()-v.t<6*HOUR)return v}catch(e){}return null}
+function drawH(){
+  const done=H.secs>=H.need-0.01;
+  $("hBar").style.width=Math.min(100,H.secs/H.need*100)+"%";
+  $("hBanner").hidden=!(H.secs>=H.need-BANNER_LEAD);
+  $("hStat").textContent=done?"✅ "+H.need+" सेकंड पूरे":`⏱ ${Math.floor(H.secs)} / ${H.need} सेकंड`;
+  $("hDone").hidden=!!H.watch;$("hDone").disabled=!(done&&H.clicked)||H.busy;
+  $("hHint").textContent=H.err?"यह वीडियो यहाँ नहीं चल पा रहा (मालिक ने embedding बंद की होगी)। चाहें तो इसे Report कीजिए।"
+    :!done?(H.watch?`वीडियो चलाइए।`:`वीडियो चलाइए। ${H.need} सेकंड पूरे होने तक “मैंने मदद की” बंद रहेगा।`)
+    :H.watch?"यह वीडियो आप देख रहे हैं। यहाँ से मदद दोबारा नहीं गिनी जाएगी।"
+    :!H.clicked?"अब वीडियो के ऊपर आए “Subscribe Now” से चैनल पर जाइए। सब्सक्राइब करना या ना करना आपकी मर्ज़ी है।"
+    :"बढ़िया! अब “मैंने मदद की” दबाइए।";
+}
+function tick(){
+  if(!H.id)return;
+  const now=Date.now(),dt=(now-H.last)/1000;H.last=now;
+  if(H.playing&&document.visibilityState==="visible"&&dt<2)H.secs=Math.min(H.need,H.secs+dt);
+  if(now-H.saved>2000){H.saved=now;saveH()}
+  drawH();
+}
+function onState(e){
+  H.playing=e.data===1;
+  if(e.data===0&&H.secs<H.need-0.01){try{P.seekTo(0,true);P.playVideo()}catch(x){}} // छोटा वीडियो खत्म हो तो 30 सेकंड पूरे होने तक दोबारा चले
+}
+async function helped(id){
+  if(needLogin())return;
+  const s=S.sos.find(x=>x.id===id);if(!s)return;
+  if(s.ownerUid===S.user.uid)return toast("अपने वीडियो को मदद नहीं गिनी जाती");
+  if(S.helpedIds.has(id))return toast("आप इस वीडियो को पहले ही मदद कर चुके हैं");
+  openPlayer(s,false);
+}
+async function watchHere(id){
+  const s=S.sos.find(x=>x.id===id)||S.helpedList.find(x=>x.id===id);if(!s)return;
+  openPlayer(s,true);
+}
+async function ownerChannel(s){
+  let cu={};try{cu=JSON.parse(localStorage.getItem("ytg_chu")||"{}")}catch(e){}
+  if(s.ownerUid&&cu[s.ownerUid])return cu[s.ownerUid];
+  try{if(s.ownerUid){const d=await getDoc(doc(db,"users",s.ownerUid));const u=(d.data()||{}).channelUrl;if(u){try{const k=Object.keys(cu);if(k.length>200)delete cu[k[0]];cu[s.ownerUid]=u;localStorage.setItem("ytg_chu",JSON.stringify(cu))}catch(e){}return u}}}catch(e){}
+  try{const r=await fetch("https://www.youtube.com/oembed?format=json&url="+encodeURIComponent(s.url));if(r.ok){const d=await r.json();if(d.author_url)return d.author_url}}catch(e){}
+  return "";
+}
+const subLink=u=>{try{const x=new URL(u);if(/youtube\.com$/.test(x.hostname.replace(/^(www\.|m\.)/,""))&&!x.pathname.startsWith("/watch")&&!x.pathname.startsWith("/shorts"))x.searchParams.set("sub_confirmation","1");return x.toString()}catch(e){return u}};
+// YouTube को ब्राउज़र में नहीं, सीधे YouTube ऐप में खोलो (ताकि Subscribe + 🔔 बेल वहीं दबे). ऐप न हो तो अपने-आप web पर चला जाएगा।
+function openYT(url){
+  let u;try{u=new URL(url)}catch(e){location.href=url;return}
+  const yt=/(^|\.)(youtube\.com|youtu\.be)$/.test(u.hostname),ua=navigator.userAgent;
+  if(yt&&/Android/i.test(ua)){
+    const p=new URLSearchParams(u.search);p.delete("sub_confirmation");const q=p.toString();
+    location.href=`intent://${u.hostname.replace(/^m\./,"www.")}${u.pathname}${q?"?"+q:""}#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=${encodeURIComponent(url)};end`;
+  }else if(yt&&/iPhone|iPad|iPod/i.test(ua)){location.href=url} // iPhone: universal link, ऐप इंस्टॉल हो तो उसी में खुलता है
+  else{const w=window.open(url,"_blank");if(w){try{w.opener=null}catch(e){}}else location.href=url}
+}
+async function openPlayer(s,watch){
+  const id=s.id,vid=vidId(s.url);if(!vid)return toast("इस वीडियो का लिंक सही नहीं है");
+  Object.assign(H,{id,vid,watch,secs:0,need:WATCH_SECS,clicked:false,playing:false,last:Date.now(),saved:0,chUrl:"",busy:false,err:false});
+  const old=loadH();if(old){H.secs=old.secs||0;H.clicked=!!old.clicked}
+  $("hTitle").textContent=s.title;$("pwrap").innerHTML='<div id="ytp"></div>';drawH();
+  dHelp.showModal();
+  ownerChannel(s).then(u=>{if(H.id===id)H.chUrl=u});
+  try{await ytApi()}catch(e){H.err=true;drawH();return}
+  if(!dHelp.open||H.id!==id)return;
+  P=new window.YT.Player("ytp",{videoId:vid,playerVars:{rel:0,playsinline:1,modestbranding:1,fs:0,disablekb:1,origin:location.origin},
+    events:{onStateChange:onState,onError:()=>{H.err=true;drawH()}}});
+  clearInterval(tk);H.last=Date.now();tk=setInterval(tick,250);
+}
+dHelp.addEventListener("close",()=>{clearInterval(tk);saveH();try{P&&P.destroy()}catch(e){}P=null;$("pwrap").innerHTML="";H.playing=false});
+$("hCancel").addEventListener("click",()=>dHelp.close());
+$("hSub").addEventListener("click",()=>{
+  const s=S.sos.find(x=>x.id===H.id),url=subLink(H.chUrl||s?.url||"https://www.youtube.com");
+  H.clicked=true;saveH();drawH();
+  openYT(url);
+});
+$("hDone").addEventListener("click",async()=>{
+  const id=H.id,s=S.sos.find(x=>x.id===id);
+  if(H.watch||!s||H.busy||H.secs<H.need-0.01||!H.clicked)return;
+  H.busy=true;drawH();
+  try{
+    const b=writeBatch(db),u=S.user.uid;
+    b.set(doc(db,"sos",id,"helps",u),{createdAt:serverTimestamp(),vid:H.vid});
+    b.update(doc(db,"sos",id),{helpCount:increment(1)});
+    b.update(doc(db,"users",u),{helpedCount:increment(1)});
+    b.set(doc(db,"users",u,"helped",id),{title:s.title,url:s.url,channelName:s.channelName,createdAt:serverTimestamp()});
+    await b.commit();
+    try{localStorage.removeItem(hKey())}catch(e){}
+    H.id=null;dHelp.close();
+    S.profile.helpedCount=(S.profile.helpedCount||0)+1;
+    S.helpedList.unshift({id,title:s.title,url:s.url,channelName:s.channelName,createdAt:Timestamp.fromMillis(Date.now())});S.helpedIds.add(id);s.helpCount=(s.helpCount||0)+1;cacheSave();
+    toast("आपकी मदद गिन ली गई ❤️");render();
+  }catch(err){console.error(err);H.busy=false;drawH();toast("नहीं हो पाया। शायद आप पहले ही मदद कर चुके हैं")}
+});
+function report(type,id){
+  const T=(hi,en)=>LANG==="en"?en:hi;
+  if(!S.user)return toast(T("Report के लिए पहले जुड़िए","Please sign up first to report"));
+  const d=$("dRep"),R=[
+    ["spam",T("स्पैम या भ्रामक","Spam or misleading")],
+    ["inappropriate",T("आपत्तिजनक या अनुचित सामग्री","Offensive or inappropriate content")],
+    ["not_owner",T("यह वीडियो उस चैनल के मालिक का नहीं है","Not posted by the channel owner")],
+    ["copyright",T("कॉपीराइट / चोरी का वीडियो","Copyright or stolen video")],
+    ["other",T("कुछ और","Something else")]];
+  d.innerHTML=`<div class="grab"></div><h3>${T("Report करें","Report")}</h3><p class="rsub">${T("सही कारण चुनिए","Choose a reason")}</p>
+   ${R.map(([v,l])=>`<label class="rrow"><input type="radio" name="rr" value="${v}"><span class="rdot"></span><span>${l}</span></label>`).join("")}
+   <textarea class="rnote" id="rNote" maxlength="150" hidden placeholder="${T("छोटे में लिखिए…","Add a few words…")}"></textarea>
+   <div class="ract"><button type="button" class="rtxt" id="rCancel">${T("रद्द करें","Cancel")}</button><button type="button" class="rok" id="rOk" disabled>${T("भेजें","Submit")}</button></div>`;
+  const nt=$("rNote"),ok=$("rOk");
+  const sync=()=>{const c=d.querySelector("input:checked");nt.hidden=!(c&&c.value==="other");ok.disabled=!c||(c.value==="other"&&nt.value.trim().length<3)};
+  d.querySelectorAll("input[name=rr]").forEach(r=>r.onchange=()=>{sync();if(!nt.hidden)nt.focus()});
+  nt.oninput=sync;
+  $("rCancel").onclick=()=>d.close();d.onclick=e=>{if(e.target===d)d.close()};
+  ok.onclick=async()=>{
+    const c=d.querySelector("input:checked");if(!c||ok.disabled)return;
+    const note=nt.value.trim();ok.disabled=true;ok.textContent=T("भेज रहे हैं…","Sending…");
+    try{
+      await addDoc(collection(db,"reports"),{reporterUid:S.user.uid,type,targetId:id,reason:(c.value+(note?" — "+note:"")).slice(0,200),createdAt:serverTimestamp()});
+      d.innerHTML=`<div class="grab"></div><div class="rdone"><div class="rtick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><h3>${T("धन्यवाद","Thank you")}</h3><p class="rsub">${T("आपकी शिकायत हमें मिल गई है। हम इसे जाँचेंगे।","We received your report and will review it.")}</p></div>`;
+      setTimeout(()=>{if(d.open)d.close()},1800);
+    }catch(e){console.error(e);ok.disabled=false;ok.textContent=T("भेजें","Submit");toast(T("शिकायत नहीं जा पाई","Could not send report"))}
+  };
+  if(!d.open)d.showModal();
+}
+window.G={login,deleteAccount,startSos,helped,report,openProfile,watch:watchHere,share,settings:openSettings};
+
+// YouTube जैसा समय: अभी / 5 मिनट पहले / 1 घंटे पहले / कल / 3 दिन पहले
+function ago(t){
+  if(!t)return "";
+  const en=LANG==="en",d=Math.max(0,Date.now()-t),m=Math.floor(d/60000),h=Math.floor(d/HOUR),dy=Math.floor(d/(24*HOUR));
+  if(m<1)return en?"Just now":"अभी";
+  if(m<60)return en?`${m} min ago`:`${m} मिनट पहले`;
+  if(h<24)return en?`${h} hour${h>1?"s":""} ago`:`${h} घंटे पहले`;
+  if(dy===1)return en?"Yesterday":"कल";
+  if(dy<7)return en?`${dy} days ago`:`${dy} दिन पहले`;
+  if(dy<30){const w=Math.floor(dy/7);return en?`${w} week${w>1?"s":""} ago`:`${w} सप्ताह पहले`}
+  const mo=Math.floor(dy/30);if(mo<12)return en?`${mo} month${mo>1?"s":""} ago`:`${mo} महीने पहले`;
+  const y=Math.floor(dy/365)||1;return en?`${y} year${y>1?"s":""} ago`:`${y} साल पहले`;
+}
+const agoTag=t=>t?` · <span class="ago${Date.now()-t<HOUR?" new":""}" data-t="${t}">${ago(t)}</span>`:"";
+setInterval(()=>{if(document.hidden)return;document.querySelectorAll(".ago[data-t]").forEach(e=>{const t=+e.dataset.t,v=ago(t);if(e.textContent!==v)e.textContent=v;e.classList.toggle("new",Date.now()-t<HOUR)})},30000);
+function card(s){
+  const me=S.user?.uid||S.hint,mine=me&&s.ownerUid===me,done=S.helpedIds.has(s.id),go=(mine||done)?"G.watch":"G.helped";
+  const left=ms(s.createdAt)+(TOP_HOURS+(s.bonus||0))*HOUR-Date.now(),fresh=left>0;
+  return `<article class="card ${mine?"mine":s.helpCount===0?"need":""}">
+   ${thumb(s.url)?`<img class="thumb" loading="lazy" alt="" src="${esc(thumb(s.url))}" onclick="${go}('${s.id}')">`:""}
+   <h3>${esc(s.title)}</h3><p class="meta">${esc(s.channelName)}${agoTag(ms(s.createdAt))}</p>${s.note?`<p class="note">${esc(s.note)}</p>`:""}
+   <div class="chips">${fresh?`<span class="chip">🔝 टॉप पर · ${Math.ceil(left/HOUR)} घंटे बाकी</span>`:""}<span class="chip ${s.helpCount===0?"w":""}">${s.helpCount===0?"अभी तक कोई मदद नहीं":"मदद मिली: "+s.helpCount}</span></div>
+   <div class="row"><button class="ghost" onclick="${go}('${s.id}')">▶ वीडियो देखें</button>
+   ${mine?`<button disabled>आपका वीडियो</button>`:done?`<button disabled>✅ मदद हो चुकी</button>`:`<button onclick="G.helped('${s.id}')">मैंने मदद की</button>`}</div>
+   <button class="link" onclick="G.report('sos','${s.id}')">⚑ Report</button></article>`;
+}
+
+// प्रोफ़ाइल का SOS बॉक्स: अभी SOS लगाने के बाद 12 घंटे का टाइमर; किसी को मदद नहीं की तो बॉक्स छिपा; शर्त पूरी तो "आप अपना SOS लगा सकते हैं" + प्लस बटन
+function cdText(w){
+  const m=Math.max(1,Math.ceil(w/60000)),h=Math.floor(m/60),mm=m%60;
+  return LANG==="en"?`⏳ Next SOS in ${[h?h+" h":"",mm?mm+" min":""].filter(Boolean).join(" ")}`:`⏳ अगला SOS ${[h?h+" घंटे":"",mm?mm+" मिनट":""].filter(Boolean).join(" ")} बाद`;
+}
+function sosBox(p){
+  const fresh=(p.helpedCount||0)-(p.helpedAtLastSos||0),need=Math.max(0,S.minHelps-fresh),until=ms(p.lastSosAt)+TOP_HOURS*HOUR,wait=until-Date.now();
+  if(wait>0)return `<div class="sec"><span class="cd" data-u="${until}">${cdText(wait)}</span></div>`;
+  if(fresh<=0)return "";
+  if(need)return `<div class="sec">अपना SOS लगाने के लिए ${need} और वीडियो को मदद कीजिए।</div>`;
+  return `<div class="sec okrow"><span>आप अपना SOS लगा सकते हैं</span><button type="button" class="plus" onclick="G.startSos()" aria-label="SOS लगाएँ"><svg aria-hidden="true"><use href="#i-plus"/></svg></button></div>`;
+}
+setInterval(()=>{if(document.hidden)return;document.querySelectorAll(".cd[data-u]").forEach(e=>{const w=+e.dataset.u-Date.now();if(w<=0){render();return}const v=cdText(w);if(e.textContent!==v)e.textContent=v})},15000);
+function render(){
+  document.body.dataset.v=S.view;
+  document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.v===S.view));
+  const A=$("app"),p=S.profile;
+  if(S.view==="home"){
+    A.innerHTML=`<h2>SOS FEED</h2><p class="sub">आपकी YouTube journey, आपकी ज़िम्मेदारी, साथ मिलकर आगे बढ़ें</p>
+     <button class="big" onclick="G.startSos()">🆘 SOS लगाएँ</button>`+
+     (S.loading?SK(4):S.sos.length?S.sos.map(card).join("")+(S.hasMore?`<div id="moreS" class="sub" style="text-align:center;padding:14px">लोड हो रहा है…</div>`:""):`<div class="empty">अभी फ़ीड खाली है।<br>पहला SOS आप लगाइए!</div>`);
+    watchMore();
+  }else if(S.view==="helped"){
+    A.innerHTML=`<h2>मेरी मदद की सूची</h2><p class="sub">जिन वीडियो को आपने सहारा दिया।</p>`+
+     ((!S.user&&!S.hint)?`<div class="empty">देखने के लिए पहले प्रोफ़ाइल टैब में Sign Up कीजिए।<br><br><a class="btn" href="#profile">प्रोफ़ाइल पर जाएँ</a></div>`:S.helpedList.length?S.helpedList.map(h=>`<article class="card">${thumb(h.url)?`<img class="thumb" loading="lazy" alt="" src="${esc(thumb(h.url))}" onclick="G.watch('${h.id}')">`:""}<h3>${esc(h.title)}</h3><p class="meta">${esc(h.channelName)}${agoTag(ms(h.createdAt))}</p><button class="ghost tiny" onclick="G.watch('${h.id}')">▶ वीडियो देखें</button></article>`).join(""):(S.loading||!S.hydrated)?SK(3):`<div class="empty">अभी तक कोई मदद नहीं की। फ़ीड से शुरू कीजिए।</div>`);
+  }else if(S.view==="profile"){
+    if(!S.user){A.innerHTML=`${PH()}<div class="signup"><div class="semoji"><svg aria-hidden="true"><use href="#lg"/></svg></div><h3>YT Growly में Sign Up कीजिए</h3><p>अपना चैनल जोड़िए, दूसरों की मदद कीजिए, और अपने वीडियो पर भी मदद पाइए।</p><button class="big" onclick="G.login()"><svg width="20" height="20" viewBox="0 0 48 48" style="vertical-align:-5px;margin-right:8px"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.9 32.6 29.4 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l6-6C34.6 5.1 29.6 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21c0-1.2-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.5 15.8 18.9 13 24 13c3.1 0 5.9 1.2 8 3.1l6-6C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.4-1.9 14.3-5.1l-6.6-5.4C29.7 35.4 27 36 24 36c-5.4 0-9.9-3.4-11.3-8.1l-6.6 5.1C9.6 39.6 16.3 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.9 2.6-2.7 4.8-5 6.3l6.6 5.4C39.9 37.4 43 31.4 43 24c0-1.2-.1-2.4-.4-3.5z"/></svg>Sign Up</button><small>Google से सिर्फ़ एक टैप में, पासवर्ड की ज़रूरत नहीं।</small></div>`;return}
+    const recv=S.mySos.reduce((n,x)=>n+(x.helpCount||0),0),need=Math.max(0,S.minHelps-((p?.helpedCount||0)-(p?.helpedAtLastSos||0)));
+    A.innerHTML=PH()+(p?`<div class="sec"><div class="pick big">${p.channelThumb?`<img alt="" src="${esc(p.channelThumb)}">`:`<span class="ph">${esc((p.channelName||"?").slice(0,1).toUpperCase())}</span>`}<div><b>${esc(p.channelName)}</b><br><small>${(typeof p.subCount==="number"&&p.subCount>=0)?p.subCount.toLocaleString("en-IN")+" subscribers":""}</small></div></div>
+      <p class="meta" style="margin:10px 0 4px">विषय: ${esc(p.topic)}</p>
+      <a href="${esc(p.channelUrl)}" target="_blank" rel="noopener">▶ चैनल देखें</a><br><br>
+      <button class="ghost tiny" onclick="G.openProfile()">बदलें</button></div>
+      <div class="stats"><div class="stat"><b>${p.helpedCount||0}</b>मैंने मदद की</div><div class="stat"><b>${recv}</b>मुझे मदद मिली</div></div>
+      ${sosBox(p)}`:`<div class="empty"><button onclick="G.openProfile()">प्रोफ़ाइल बनाएँ</button></div>`);
+  }else{A.innerHTML=rulesHTML()}
+}
+
+// ===== नया: भाषा (हिन्दी/English), सेटिंग्स, इंस्टॉल, शेयर, नेटिव जैसा व्यवहार =====
+const LK="ytg_lang";let LANG="hi";try{if(localStorage.getItem(LK)==="en")LANG="en"}catch(e){}
+const EN={"आप अपना SOS लगा सकते हैं":"You can post your SOS","YT Growly में आपका स्वागत है": "Welcome to YT Growly", "हर नए क्रिएटर को चाहिए एक सहारा": "Every new creator needs support", "किसी नए YouTuber का पहला व्यू, पहला कमेंट, पहला सब्सक्राइबर: आपकी एक मदद से उसका हौसला बढ़ता है। आइए, इस सफ़र में उसका साथ दें।": "A new YouTuber's first view, first comment, first subscriber: your one act of help lifts their spirits. Come, stand by them on this journey.", "शुरू करें": "Get started", "फ़ीड": "Feed", "मेरी मदद": "My help", "प्रोफ़ाइल": "Profile", "नियम": "Rules", "सेटिंग्स": "Settings", "आपका चैनल": "Your channel", "उसी Gmail से जुड़ें जिससे YouTube चैनल बना है।": "Sign in with the same Gmail your YouTube channel was created with.", "अपने चैनल का लिंक डालिए": "Enter your channel link", "चैनल का नाम": "Channel name", "चैनल अपने-आप नहीं मिला, नाम यहाँ खुद लिख दीजिए।": "Channel not found automatically. Type the name here.", "विषय": "Topic", "जैसे: खाना, गेमिंग, पढ़ाई": "e.g. Food, Gaming, Study", "अंदाज़न subscribers": "Approx. subscribers", "रद्द": "Cancel", "सेव करें": "Save", "अपना SOS लगाएँ": "Post your SOS", "आपका वीडियो 12 घंटे तक SOS FEED में टॉप पर रहेगा": "Your video stays at the top of SOS FEED for 12 hours", "वीडियो का लिंक": "Video link", "वीडियो का नाम": "Video title", "अपनी बात (चाहें तो)": "Your note (optional)", "जैसे: मदद कीजिए, सच्चा कमेंट कीजिए 🙏": "e.g. Please help, leave a genuine comment 🙏", "सिर्फ़ YouTube वीडियो का लिंक डालें।": "Only a YouTube video link is accepted.", "SOS लगाएँ": "Post SOS", "अपने साथी को दिल से सपोर्ट देने के लिए सब्सक्राइब नाउ": "Subscribe now to support your fellow creator from the heart", "बंद करें": "Close", "मैंने मदद की": "I helped", "लोड नहीं हो पाया। इंटरनेट देखकर दोबारा कोशिश कीजिए।": "Couldn't load. Check your internet and try again.", "ऊपर वाले 'Sign in with Google' बटन से जुड़िए": "Use the 'Sign in with Google' button above", "क्या आप सच में अपना अकाउंट हटाना चाहते हैं?\n\nआपकी प्रोफ़ाइल, आपका SOS वीडियो और आपकी मदद की सूची हमेशा के लिए हट जाएगी। यह वापस नहीं होगा।": "Do you really want to delete your account?\n\nYour profile, your SOS video and your help list will be removed permanently. This cannot be undone.", "आपका अकाउंट हटा दिया गया": "Your account has been deleted", "चैनल का नाम नहीं मिला, नीचे खुद लिख दीजिए": "Channel name not found, please type it below", "चैनल का लिंक youtube.com का होना चाहिए": "Channel link must be a youtube.com link", "प्रोफ़ाइल सेव हो गई ✅": "Profile saved ✅", "सेव नहीं हो पाया": "Couldn't save", "चैनल की जानकारी ला रहे हैं…": "Fetching channel info…", "चैनल अपने-आप नहीं आ रहा, नीचे नाम खुद लिख दीजिए।": "Channel isn't loading automatically, type the name below.", "चैनल अपने-आप नहीं मिला, नीचे नाम खुद लिख दीजिए।": "Channel not found automatically, type the name below.", "वीडियो की जानकारी ला रहे हैं…": "Fetching video info…", "इस वीडियो में embedding बंद है, इसलिए यह यहाँ चल नहीं पाएगा। YouTube Studio में वीडियो खोलकर “Allow embedding” चालू कीजिए।": "Embedding is turned off for this video, so it can't play here. Open the video in YouTube Studio and turn on “Allow embedding”.", "नाम अपने-आप नहीं आया, नीचे खुद लिख दीजिए।": "Name didn't load automatically, type it below.", "पहले प्रोफ़ाइल टैब में जाकर Sign Up कीजिए": "First go to the Profile tab and Sign Up", "सिर्फ़ YouTube का लिंक चलेगा": "Only YouTube links are accepted", "इस वीडियो में embedding बंद है, पहले उसे चालू कीजिए": "Embedding is off for this video, turn it on first", "12 घंटे पूरे होने से पहले दूसरा वीडियो नहीं लग सकता": "You can't post another video before 12 hours are over", "आपका SOS फ़ीड पर लग गया ✅": "Your SOS is live on the feed ✅", "SOS नहीं लग पाया। नियम दोबारा देख लीजिए": "Couldn't post SOS. Please check the rules again", "अपने वीडियो को मदद नहीं गिनी जाती": "Help on your own video isn't counted", "आप इस वीडियो को पहले ही मदद कर चुके हैं": "You have already helped this video", "इस वीडियो का लिंक सही नहीं है": "This video link is not valid", "आपकी मदद गिन ली गई ❤️": "Your help has been counted ❤️", "नहीं हो पाया। शायद आप पहले ही मदद कर चुके हैं": "Couldn't do it. You may have already helped", "Report के लिए पहले जुड़िए": "Sign in first to report", "क्या गलत है? (छोटे में लिखिए)": "What is wrong? (write briefly)", "शिकायत भेज दी गई": "Report sent", "शिकायत नहीं जा पाई": "Couldn't send the report", "आपकी YouTube journey, आपकी ज़िम्मेदारी, साथ मिलकर आगे बढ़ें": "Your YouTube journey, your responsibility. Let's grow together.", "🆘 SOS लगाएँ": "🆘 Post SOS", "लोड हो रहा है…": "Loading…", "अभी फ़ीड खाली है।": "The feed is empty right now.", "पहला SOS आप लगाइए!": "Be the first to post an SOS!", "अभी तक कोई मदद नहीं": "No help yet", "✅ मदद हो चुकी": "✅ Already helped", "▶ वीडियो देखें": "▶ Watch video", "आपका वीडियो": "Your video", "मेरी मदद की सूची": "My help list", "जिन वीडियो को आपने सहारा दिया।": "Videos you have supported.", "देखने के लिए पहले प्रोफ़ाइल टैब में Sign Up कीजिए।": "Sign Up in the Profile tab to see this.", "प्रोफ़ाइल पर जाएँ": "Go to Profile", "अभी तक कोई मदद नहीं की। फ़ीड से शुरू कीजिए।": "You haven't helped anyone yet. Start from the feed.", "मेरी प्रोफ़ाइल": "My profile", "YT Growly में Sign Up कीजिए": "Sign up for YT Growly", "अपना चैनल जोड़िए, दूसरों की मदद कीजिए, और अपने वीडियो पर भी मदद पाइए।": "Add your channel, help others, and get help on your own videos.", "Google से सिर्फ़ एक टैप में, पासवर्ड की ज़रूरत नहीं।": "One tap with Google, no password needed.", "▶ चैनल देखें": "▶ View channel", "बदलें": "Edit", "मुझे मदद मिली": "Helps I received", "आप अपना SOS लगा सकते हैं ✅": "You can post your SOS ✅", "प्रोफ़ाइल बनाएँ": "Create profile", "भाषा": "Language", "ऐप डाउनलोड करें": "Download app", "मेरा अकाउंट हटाएं": "Delete my account", "अपना अकाउंट बनाएँ": "Create your account", "iPhone पर: Safari में Share बटन दबाइए, फिर “Add to Home Screen” चुनिए।": "On iPhone: tap the Share button in Safari, then choose “Add to Home Screen”.", "ब्राउज़र के मेन्यू (⋮) में “Install app” या “होम स्क्रीन पर जोड़ें” चुनिए": "Open the browser menu (⋮) and choose “Install app” or “Add to Home screen”", "ऐप होम स्क्रीन में जुड़ गया ✅": "App added to your home screen ✅", "लिंक कॉपी हो गया": "Link copied", "यह वीडियो यहाँ नहीं चल पा रहा (मालिक ने embedding बंद की होगी)। चाहें तो इसे Report कीजिए।": "This video can't play here (the owner may have turned off embedding). You can report it if you like.", "यह वीडियो आप देख रहे हैं। यहाँ से मदद दोबारा नहीं गिनी जाएगी।": "You are watching this video. Help will not be counted again from here.", "अब वीडियो के ऊपर आए “Subscribe Now” से चैनल पर जाइए। सब्सक्राइब करना या ना करना आपकी मर्ज़ी है।": "Now tap “Subscribe Now” on the video to visit the channel. Subscribing is entirely your choice.", "बढ़िया! अब “मैंने मदद की” दबाइए।": "Great! Now tap “I helped”.", "वीडियो चलाइए।": "Play the video."};
+const PAT=[[/^Login नहीं हो पाया \((.*)\)$/,(m,a)=>`Login failed (${a})`],[/^अकाउंट नहीं हट पाया \((.*)\)\. दोबारा कोशिश कीजिए$/,(m,a)=>`Couldn't delete account (${a}). Please try again`],
+[/^यह वीडियो आपके चैनल "(.*)" का नहीं दिख रहा। सिर्फ़ अपना वीडियो लगाइए।$/,(m,a)=>`This video doesn't appear to be from your channel "${a}". Post only your own video.`],
+[/^अपना SOS लगाने के लिए (\d+) और वीडियो को मदद कीजिए(।?)$/,(m,n,d)=>`Help ${n} more video${n>1?"s":""} to post your SOS${d?".":""}`],
+[/^आपका अगला वीडियो (\d+) घंटे बाद ही लग पाएगा$/,(m,n)=>`Your next video can be posted after ${n} hour${n>1?"s":""}`],
+[/^🔝 टॉप पर · (\d+) घंटे बाकी$/,(m,n)=>`🔝 Top · ${n} hour${n>1?"s":""} left`],[/^मदद मिली: (\d+)$/,(m,n)=>`Helps received: ${n}`],[/^विषय: (.*)$/,(m,a)=>`Topic: ${a}`],
+[/^✅ (\d+) सेकंड पूरे$/,(m,n)=>`✅ ${n} seconds done`],[/^⏱ (.*) \/ (.*) सेकंड$/,(m,a,b)=>`⏱ ${a} / ${b} seconds`],
+[/^वीडियो चलाइए। (\d+) सेकंड पूरे होने तक “मैंने मदद की” बंद रहेगा।$/,(m,n)=>`Play the video. “I helped” stays disabled until ${n} seconds are done.`]];
+function tr(x){if(LANG!=="en"||!x)return x;const k=String(x).trim();let v=EN[k];if(v!==undefined)return String(x).replace(k,v);for(const[r,f]of PAT){const m=k.match(r);if(m)return String(x).replace(k,f(...m))}return x}
+const _cf=window.confirm.bind(window),_pr=window.prompt.bind(window);window.confirm=m=>_cf(tr(m));window.prompt=(m,d)=>_pr(tr(m),d);
+const store=new WeakMap(),ATT=["placeholder","aria-label","title"];
+function trText(n){const v=n.nodeValue;let e=store.get(n);if(!e||e.t!==v){e={o:v,t:v};store.set(n,e)}const out=LANG==="en"?tr(e.o):e.o;if(out!==v)n.nodeValue=out;e.t=out}
+function trAttrs(el){for(const a of ATT){if(!el.hasAttribute||!el.hasAttribute(a))continue;el.__o=el.__o||{};const cur=el.getAttribute(a);if(el.__o[a]===undefined||el.__o[a].t!==cur)el.__o[a]={o:cur,t:cur};const out=LANG==="en"?tr(el.__o[a].o):el.__o[a].o;if(out!==cur)el.setAttribute(a,out);el.__o[a].t=out}}
+function walk(root){if(root.nodeType===3){trText(root);return}if(root.nodeType!==1)return;if(/^(SCRIPT|STYLE)$/.test(root.tagName))return;trAttrs(root);
+ const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT|NodeFilter.SHOW_ELEMENT);let n;while(n=w.nextNode()){if(n.nodeType===3){if(!/^(SCRIPT|STYLE)$/.test(n.parentNode.tagName))trText(n)}else trAttrs(n)}}
+new MutationObserver(ms=>{for(const m of ms){if(m.type==="characterData")trText(m.target);else m.addedNodes.forEach(walk)}}).observe(document.body,{childList:true,subtree:true,characterData:true});
+function setLang(l){LANG=l;try{localStorage.setItem(LK,l)}catch(e){}document.documentElement.lang=l;
+ document.title=l==="en"?"YT Growly – First support for small creators":"YT Growly – छोटे क्रिएटर्स का पहला सहारा";walk(document.body);render()}
+document.documentElement.lang=LANG;if(LANG==="en"){document.title="YT Growly – First support for small creators";walk(document.body)}
+const PH=()=>`<div class="hrow"><h2>मेरी प्रोफ़ाइल</h2><button class="icb" type="button" onclick="G.share()" aria-label="Share"><svg aria-hidden="true"><use href="#i-share"/></svg></button></div>`;
+function rulesHTML(){return LANG==="en"?`<div class="hrow"><h2>Rules &amp; guidelines</h2></div><p class="sub">To keep YT Growly fair and trustworthy for everyone, these rules must be followed.</p>
+<div class="sec"><h3>1. How to help</h3><ol class="rules"><li>Tap any SOS in the feed to open the video. It plays inside Growly.</li><li>Watch the video for at least ${WATCH_SECS} seconds.</li><li>A “Subscribe Now” button appears in the last seconds. Use it to visit the channel and give the creator genuine support. Subscribing is your own choice.</li><li>Tap “I helped” only after you have watched and supported the video. Only then is your help counted.</li></ol></div>
+<div class="sec"><h3>2. Conditions to post your SOS</h3><ul class="rules"><li>Before posting an SOS you must help at least ${S.minHelps} other videos. This applies before every new SOS.</li><li>You can post only a video from your own channel, and embedding must be turned on for it.</li><li>Only YouTube video links are valid. Video title up to 80 and channel name up to 60 characters.</li><li>One person has only one SOS in the feed at a time. The next SOS can be posted only ${TOP_HOURS} hours after the previous one.</li><li>Your SOS stays at the top for ${TOP_HOURS} hours. After that it moves down and newer SOS appear above it.</li><li>For every person you help beyond the required ${S.minHelps} videos, your SOS stays 1 hour longer at the top (for example 1 extra help = ${TOP_HOURS+1} hours). Up to ${MAX_BONUS} extra hours.</li><li>One person's help on a video is counted only once. Help on your own video is not counted.</li></ul></div>
+<div class="sec ban"><h3>3. Strictly prohibited</h3><ul class="rules x"><li>Tapping “I helped” without watching the video or supporting the creator. This is false help and cheats the other creator.</li><li>Leaving meaningless, copied or fake comments such as just “nice video”.</li><li>Getting subscribes, views or comments in exchange for money, rewards or any incentive, or asking for “sub for sub” swaps.</li><li>Using bots, scripts or any automated method to count help, or inflating views and subscribers artificially.</li><li>Claiming someone else's channel or video as your own, creating fake channels or keeping more than one account.</li><li>Posting an SOS for a video that is misleading, obscene, hateful or illegal.</li><li>Misusing the Report feature by filing false complaints without reason.</li></ul></div>
+<div class="sec"><h3>4. Action for violations</h3><p style="margin:0 0 8px">If a violation is found, YT Growly may remove your SOS, cancel your help count and, in serious or repeated cases, permanently suspend your account, without prior notice.</p><p style="margin:0">If you see wrong activity, tap ⚑ Report on that SOS. Reports are reviewed.</p></div>
+<div class="sec"><h3>5. Your account and data</h3><p style="margin:0">You can delete your account at any time from the Settings icon at the top corner. This permanently removes your profile, your SOS video and your help list.</p></div>`:`<div class="hrow"><h2>नियम और दिशानिर्देश</h2></div><p class="sub">YT Growly सबके लिए बराबर और भरोसेमंद रहे, इसके लिए इन नियमों का पालन करना ज़रूरी है।</p>
+<div class="sec"><h3>1. मदद कैसे करें</h3><ol class="rules"><li>फ़ीड में किसी SOS पर टैप करके वीडियो खोलिए। वीडियो Growly के अंदर ही चलता है।</li><li>वीडियो कम से कम ${WATCH_SECS} सेकंड तक देखिए।</li><li>आख़िरी सेकंडों में “Subscribe Now” बटन आता है। उससे चैनल पर जाकर क्रिएटर को सच्चा समर्थन दीजिए। सब्सक्राइब करना आपकी इच्छा पर निर्भर है।</li><li>वीडियो देखने और समर्थन देने के बाद ही “मैंने मदद की” दबाइए। तभी आपकी मदद गिनी जाती है।</li></ol></div>
+<div class="sec"><h3>2. अपना SOS लगाने की शर्तें</h3><ul class="rules"><li>SOS लगाने से पहले कम से कम ${S.minHelps} दूसरे वीडियो को मदद करना ज़रूरी है। यह शर्त हर नए SOS पर लागू होती है।</li><li>सिर्फ़ अपने चैनल का वीडियो लगाया जा सकता है, और उसमें embedding चालू होनी चाहिए।</li><li>सिर्फ़ YouTube वीडियो के लिंक मान्य हैं। वीडियो का नाम 80 और चैनल का नाम 60 अक्षर तक।</li><li>एक व्यक्ति का एक समय में एक ही SOS फ़ीड में रहता है। अगला SOS पिछले SOS के ${TOP_HOURS} घंटे बाद ही लग सकता है।</li><li>आपका SOS ${TOP_HOURS} घंटे तक सबसे ऊपर रहता है। उसके बाद वह नीचे चला जाता है और नए SOS उसके ऊपर आते हैं।</li><li>ज़रूरी ${S.minHelps} वीडियो के अलावा आप जितने और लोगों को मदद करेंगे, हर एक मदद पर आपका SOS 1 घंटा ज़्यादा ऊपर रहेगा (जैसे 1 ज़्यादा मदद = ${TOP_HOURS+1} घंटे)। अधिकतम ${MAX_BONUS} घंटे ज़्यादा।</li><li>एक वीडियो पर एक व्यक्ति की मदद सिर्फ़ एक बार गिनी जाती है। अपने वीडियो पर मदद नहीं गिनी जाती।</li></ul></div>
+<div class="sec ban"><h3>3. सख़्त मनाही</h3><ul class="rules x"><li>बिना वीडियो देखे या बिना समर्थन दिए “मैंने मदद की” दबाना। यह झूठी मदद है और दूसरे क्रिएटर के साथ धोखा है।</li><li>“nice video” जैसे बेमतलब, कॉपी किए हुए या नकली कमेंट करना।</li><li>पैसे, इनाम या किसी भी लालच के बदले सब्सक्राइब, व्यू या कमेंट कराना, या “sub for sub” जैसी अदला-बदली माँगना।</li><li>बॉट, स्क्रिप्ट या किसी भी स्वचालित तरीके से मदद गिनवाना, या नकली व्यू और सब्सक्राइबर बढ़ाना।</li><li>किसी और का चैनल या वीडियो अपना बताना, नकली चैनल बनाना या एक से ज़्यादा अकाउंट रखना।</li><li>भ्रामक, अश्लील, नफ़रत फैलाने वाला या कानून के खिलाफ़ कंटेंट वाला वीडियो SOS में लगाना।</li><li>Report सुविधा का दुरुपयोग करना, यानी बिना कारण किसी की झूठी शिकायत करना।</li></ul></div>
+<div class="sec"><h3>4. नियम तोड़ने पर कार्रवाई</h3><p style="margin:0 0 8px">नियम का उल्लंघन पाए जाने पर YT Growly बिना पूर्व सूचना के आपका SOS हटा सकता है, आपकी मदद की गिनती रद्द कर सकता है, और गंभीर या बार-बार के मामलों में आपका अकाउंट स्थायी रूप से बंद कर सकता है।</p><p style="margin:0">कोई गलत गतिविधि दिखे तो उस SOS पर ⚑ Report दबाइए। शिकायतों की समीक्षा की जाती है।</p></div>
+<div class="sec"><h3>5. आपका अकाउंट और डेटा</h3><p style="margin:0">आप कभी भी ऊपर कोने के सेटिंग्स आइकन से अपना अकाउंट हटा सकते हैं। इससे आपकी प्रोफ़ाइल, आपका SOS वीडियो और आपकी मदद की सूची हमेशा के लिए हट जाती है।</p></div>`}
+// ---- share (लिंक के साथ लोगो का preview <meta og:image> से आता है)
+async function share(){const url=location.origin+location.pathname,txt=LANG==="en"?"YT Growly: the first support for small YouTube creators. Help others and get help on your own videos.":"YT Growly: छोटे YouTube क्रिएटर्स का पहला सहारा। दूसरों की मदद कीजिए, अपने वीडियो पर भी मदद पाइए।";
+ try{if(navigator.share){await navigator.share({title:"YT Growly",text:txt,url});return}}catch(e){if(e&&e.name==="AbortError")return}
+ try{await navigator.clipboard.writeText(txt+" "+url);toast("लिंक कॉपी हो गया")}catch(e){toast(url)}}
+// ---- ऐप इंस्टॉल
+let dip=null;const ios=/iPad|iPhone|iPod/.test(navigator.userAgent);
+const installed=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true||(()=>{try{return localStorage.getItem("ytg_inst")==="1"}catch(e){return false}})();
+addEventListener("beforeinstallprompt",e=>{e.preventDefault();dip=e;try{localStorage.removeItem("ytg_inst")}catch(x){}});
+addEventListener("appinstalled",()=>{try{localStorage.setItem("ytg_inst","1")}catch(e){}dip=null;$("dSet").open&&$("dSet").close();toast("ऐप होम स्क्रीन में जुड़ गया ✅")});
+async function installApp(){if(dip){const p=dip;dip=null;p.prompt();try{await p.userChoice}catch(e){}return}
+ if(ios){const h=$("sHint");if(h)h.hidden=false;return}toast("ब्राउज़र के मेन्यू (⋮) में “Install app” या “होम स्क्रीन पर जोड़ें” चुनिए")}
+if("serviceWorker"in navigator)addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+// ---- सेटिंग्स
+function openSettings(){const d=$("dSet"),ic=n=>`<svg aria-hidden="true"><use href="#i-${n}"/></svg>`;
+ d.innerHTML=`<div class="grab"></div><h3>सेटिंग्स</h3>
+ <div class="srow">${ic("globe")}<span>भाषा</span><div class="seg"><button type="button" data-l="hi" class="${LANG==="hi"?"on":""}">हिन्दी</button><button type="button" data-l="en" class="${LANG==="en"?"on":""}">English</button></div></div>
+ ${installed()?"":`<button type="button" class="srow" id="sInst">${ic("dl")}<span>ऐप डाउनलोड करें</span></button><p class="hint" id="sHint" hidden>iPhone पर: Safari में Share बटन दबाइए, फिर “Add to Home Screen” चुनिए।</p>`}
+ ${S.user?`<button type="button" class="srow red" id="sAcc">${ic("trash")}<span>मेरा अकाउंट हटाएं</span></button>`:`<button type="button" class="srow" id="sAcc">${ic("uadd")}<span>अपना अकाउंट बनाएँ</span></button>`}
+ <button type="button" class="ghost" id="sClose" style="width:100%;margin-top:8px">बंद करें</button>`;
+ d.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{setLang(b.dataset.l);openSettings()});
+ const si=$("sInst");if(si)si.onclick=installApp;
+ $("sAcc").onclick=()=>{d.close();if(S.user)G.deleteAccount();else go("profile")};
+ $("sClose").onclick=()=>d.close();d.onclick=e=>{if(e.target===d)d.close()};if(!d.open)d.showModal()}
+// ---- header / नीचे का बार: नीचे स्क्रॉल पर गायब, ऊपर स्क्रॉल पर तुरंत वापस
+const hdr=document.querySelector("header"),nvb=document.querySelector("nav");let ly=Math.max(0,scrollY),hO=0,nO=0;
+const clamp=(v,m)=>v<0?0:v>m?m:v;
+function applyBars(){hdr.style.transform=hO?`translate3d(0,${-hO}px,0)`:"";nvb.style.transform=nO?`translate3d(0,${nO}px,0)`:""}
+function setHid(h){if(!h){hO=0;nO=0;ly=Math.max(0,scrollY);applyBars()}}
+addEventListener("scroll",()=>{
+ const max=Math.max(0,document.documentElement.scrollHeight-innerHeight),y=Math.min(Math.max(0,scrollY),max),d=y-ly;ly=y;
+ if(!d)return;
+ hO=clamp(hO+d,hdr.offsetHeight);nO=clamp(nO+d,nvb.offsetHeight);
+ applyBars()},{passive:true});
+// ---- ज़ूम और अनचाहा text select बंद
+["gesturestart","gesturechange","gestureend"].forEach(ev=>addEventListener(ev,e=>e.preventDefault(),{passive:false}));
+addEventListener("touchmove",e=>{if(e.touches.length>1)e.preventDefault()},{passive:false});
+addEventListener("selectstart",e=>{if(!/^(INPUT|TEXTAREA)$/.test(e.target.tagName||e.target.parentNode?.tagName))e.preventDefault()});
+addEventListener("contextmenu",e=>{if(!/^(INPUT|TEXTAREA)$/.test(e.target.tagName))e.preventDefault()});
+const route=()=>{S.view=(location.hash||"#home").slice(1);if(!["home","helped","profile","rules"].includes(S.view))S.view="home";setHid(false);render();scrollTo(0,0)};
+// ---- Back: ज़्यादा से ज़्यादा 4 screens (फ़ीड, मेरी मदद, प्रोफ़ाइल, नियम), हर screen history में सिर्फ़ एक बार।
+// Back एक-एक करके उल्टे क्रम में पीछे ले जाता है; आख़िर में होम से Back = सीधे ऐप से बाहर (कोई गार्ड/Exit स्क्रीन नहीं)।
+// जो screen पहले से स्टैक में है उस पर दोबारा जाने पर स्टैक उसी जगह तक वापस कट जाता है (1-2-3-2 -> 1-2)।
+const VIEWS=["home","helped","profile","rules"];
+const hashView=()=>{const v=(location.hash||"#home").slice(1);return VIEWS.includes(v)?v:"home"};
+let stk=["home"];
+function go(v){
+  if(!VIEWS.includes(v)||v===S.view)return;
+  const i=stk.indexOf(v);
+  if(i>=0){const n=stk.length-1-i;if(n>0)history.go(-n);return} // पहले से स्टैक में है -> वहीं तक वापस
+  stk=[...stk,v];history.pushState({s:stk},"","#"+v);route();
+}
+document.addEventListener("click",e=>{
+  const a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;
+  const v=a.getAttribute("href").slice(1);if(!VIEWS.includes(v))return;
+  e.preventDefault();go(v);
+});
+addEventListener("popstate",()=>{const st=history.state;if(st&&Array.isArray(st.s))stk=st.s;if(hashView()!==S.view)route()});
+addEventListener("hashchange",()=>{if(hashView()!==S.view)route()});
+(function boot(){ // refresh/सीधा लिंक: होम को पहली entry बनाओ ताकि Back उसी पर आए और फिर बाहर जाए
+  const v=hashView(),st=history.state;
+  if(st&&Array.isArray(st.s)){stk=st.s;route();return}
+  stk=["home"];history.replaceState({s:stk},"","#home");
+  if(v!=="home"){stk=["home",v];history.pushState({s:stk},"","#"+v)}
+  route();
+})();
+</script>
+</body>
+</html>
